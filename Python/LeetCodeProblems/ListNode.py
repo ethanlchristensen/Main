@@ -18,6 +18,7 @@ class LinkedList():
             cur = cur.next
         print()
 
+
     def add(self, val):
         cur = self.head
         if self.head.val == None:
