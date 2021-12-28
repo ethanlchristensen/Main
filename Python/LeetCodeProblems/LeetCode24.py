@@ -3,8 +3,8 @@
 # the list so the adjacent pairs of nodes are
 # swapped . . . For example . . . 
 # 1 -> 2 -> 3 -> 4 = 2 -> 1 -> 4 -> 3
-
-from ListNode import ListNode
+import random
+from ListNode import LinkedList
 
 def swapPairs (head):
     cur = head
@@ -18,7 +18,12 @@ def swapPairs (head):
             cur = cur.next
     return head
 
-head = ListNode(1, ListNode(2, ListNode(3, ListNode(4, None))))
-head.show()
-swapPairs(head)
-head.show()
+
+ll = LinkedList()
+for i in range(10):
+    ll.add(i)
+ll.show()
+
+swapPairs(ll.head)
+ll.show()
+
