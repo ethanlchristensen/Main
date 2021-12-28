@@ -1,0 +1,106 @@
+{% extends "main/base.html" %}
+{% block content %}
+<link rel="stylesheet" href="/static/main/main.css">
+<style>
+    input {
+        width: 57px;
+        border: none;
+        background-color: transparent;
+        resize: none;
+        outline: none;
+        font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+        font-size: 16px;
+        background: #5f788a;
+        border-radius: 999px;
+        box-shadow: #5E5DF0 0 10px 20px -10px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        padding: 8px 18px;
+    }
+</style>
+
+<body>
+    <form method='POST' action="{% url 'update-points' %}">
+        {% csrf_token %}
+        <div>
+            <h1 id="stopwatch">00:00:00</h1>
+        </div>
+
+        <ul id="buttons">
+            <li><input type="button" class="button-34" value="Not on Phone" onclick="startTimer()"></li>
+            <li><input type="button" class="button-34" value="On Phone" onclick="stopTimer()"></li>
+            <li><input type="button" class="button-34" value="Reset" onclick="resetTimer()"></li>
+            <li><input class="button-34" type="submit" value="Update Points"></li>
+            <br><br>
+            <li><input style="width:90px;" class="button-34" value="Points:" readonly></li>
+            <li><input type="text" id="points" name="points" value='00' readonly></li>
+        </ul>
+    </form>
+    <script>
+        const timer = document.getElementById('stopwatch');
+        const score = document.getElementById('points');
+        const message = document.getElementById('message');
+
+        var hr = 0;
+        var min = 0;
+        var sec = 0;
+        var stoptime = true;
+
+        function startTimer() {
+            if (stoptime == true) {
+                stoptime = false;
+                timerCycle();
+            }
+        }
+        function stopTimer() {
+            if (stoptime == false) {
+                stoptime = true;
+                score.value = '' + sec;
+            }
+        }
+
+        function timerCycle() {
+            if (stoptime == false) {
+                sec = parseInt(sec);
+                min = parseInt(min);
+                hr = parseInt(hr);
+
+                sec = sec + 1;
+
+                if (sec == 60) {
+                    min = min + 1;
+                    sec = 0;
+                }
+                if (min == 60) {
+                    hr = hr + 1;
+                    min = 0;
+                    sec = 0;
+                }
+
+                if (sec < 10 || sec == 0) {
+                    sec = '0' + sec;
+                }
+                if (min < 10 || min == 0) {
+                    min = '0' + min;
+                }
+                if (hr < 10 || hr == 0) {
+                    hr = '0' + hr;
+                }
+
+                timer.innerHTML = hr + ':' + min + ':' + sec;
+
+                setTimeout("timerCycle()", 1000);
+            }
+        }
+
+        function resetTimer() {
+            timer.innerHTML = '00:00:00';
+            score.value = '00';
+            stoptime = true;
+            hr = 0;
+            min = 0;
+            sec = 0;
+        }
+    </script>
+</body>
+{% endblock content %}

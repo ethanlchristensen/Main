@@ -1,0 +1,39 @@
+{% extends "reservation/base.html" %}
+{% block content%}
+<div class="content-section">
+    <form action="/addReservationItem/" method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-8">Make Reservation</legend>
+            <div class="form-group">
+                <h2>Basic Details</h2>
+                <input type="number" style="width:225px;" min="1" max="50" name="peopleCount" placeholder="How many people? (max 50)" required> <br><br>
+                <input type="text" size="26" name="reservationName" placeholder="Name" required> <br><br>
+                <input type="text" size="26" style="height:100px;" name="comments" placeholder="Special requests" > <br>
+            </div>
+            <div class="form-group">
+                <h2>Seating Preference</h2>
+                <input type="radio" id="Booth" name="tablePref" value="Booth">
+                <label for="Booth">Booth</label><br>
+                <input type="radio" id="Table" name="tablePref" value="Table">
+                <label for="Table">Table</label><br>
+                <input type="radio" id="No Preference" name="tablePref" value="No Preference" checked>
+                <label for="No Preference">No Preference</label> <br>
+            </div>
+            <div class="ml-2">
+                <label for="reservationTime">Reservation date:</label>
+                <input type="datetime-local" id="reservationTime" name="reservationTime" required>
+            </div>
+            <div>
+                <label for="restaurants">Choose a restaurant:</label>
+                <select name="restaurants" id="restaurants">
+                    {% for restaurant in restaurants %}
+                    <option value = "{{ restaurant.name }}" name="resin" > {{ restaurant.name }} </option>
+                    {% endfor %}
+                </select>
+            </div>
+        </fieldset>
+        <button class="btn btn-outline-info" type="submit">Confirm</button>
+    </form>
+</div>
+{% endblock content %}

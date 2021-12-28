@@ -1,0 +1,20 @@
+{% extends "reservation/base.html" %}
+{% load crispy_forms_tags %}
+{% block content%}
+   <h1>User: {{ user.username }}</h1>
+   <h2>Your Reservations</h2>
+   {% for reservation in reservations %}
+      {% if reservation.user == user.username %} 
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" >{{ reservation.reservationName }}</a>
+              <small class="text-muted">{{ reservation.date|date:"F d, Y" }}</small>
+            </div>
+            <h3><a class="article-title" href="#">{{ reservation.peopleCount }}</a></h3>
+            <p class="article-content">{{ reservation.requests }}</p>
+          </div>
+        </article>
+       {% endif %}
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends "reservation/base.html" %}
+{% block content%}
+    <h2>Search A Restaurant</h2>
+    <form action="/searchRestaurant/" method="POST">
+        {% csrf_token %}
+    <div>
+        <label for="restaurants">Search A Restaurant:</label>
+                <select name="restaurants" id="restaurants">
+                    {% for restaurant in restaurants %}
+                    <option value = "{{ restaurant.name }}" name="resin" > {{ restaurant.name }} </option>
+                    {% endfor %}
+                </select>
+    </div>
+    <button class="btn btn-outline-info" type="submit">Search</button>
+</form>
+{% endblock content %}

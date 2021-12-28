@@ -1,0 +1,10 @@
+{% extends "main/base.html" %}
+{% load crispy_forms_tags %}
+{% block content%}
+   <h1>User: {{ user.username }}</h1>
+   {% for point in points %}
+      {% if point.user == user.username %}
+         <h1>Points: {{ point.points }}</h1>
+      {% endif %}
+   {% endfor %}
+{% endblock content %}

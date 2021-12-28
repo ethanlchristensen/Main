@@ -1,0 +1,17 @@
+{% extends "reservation/base.html" %}
+{% block content%}
+    <h2>Reservations Around You</h2>
+    {% for reservation in reservations %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" >{{ reservation.reservationName }}</a>
+              <small class="text-muted">{{ reservation.date|date:"F d, Y" }}</small>
+            </div>
+            <h3><a class="article-title" >{{ reservation.peopleCount }} people attending</a></h3>
+            <p class="article-content"> Special Requests: {{ reservation.requests }}</p>
+              <p class="article-content">At: {{ reservation.restaurant }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,154 @@
+:root {
+    --main-color: black;
+    --accent-color: yellow;
+}
+
+*, *::before, *::after {
+    font-family: 'Noto Sans Mono', monospace;
+}
+
+body {
+    background-color: var(--main-color);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: ease 0.5s all 0s;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+}
+
+.timer-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer-display .timer {
+    font-weight: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 12rem;
+    letter-spacing: 10px;
+    width: fit-content;
+    user-select: none;
+    transition: ease 0.5s all 0s;
+    color: var(--accent-color);
+}
+
+
+.buttons-display .buttons-display-list {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.buttons-display .buttons-display-list li {
+    display:inline-block;
+    padding:10px;
+}
+
+.buttons-display .buttons-display-list li button {
+    font-weight: 300;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: var(--main-color);
+    color: var(--accent-color);
+    border-radius: 10px;
+    border: 2px solid var(--main-color);
+    transition: ease 0.5s all 0s;
+    width: fit-content;
+    font-size: 3rem;
+}
+
+.buttons-display .buttons-display-list li button:hover {
+    border: 2px solid  var(--accent-color);
+}
+#mode {
+    width: 350px;
+}
+
+#mode:hover {
+    border: 2px solid  var(--accent-color);
+    color: var(--main-color);
+    background-color: var(--accent-color);
+}
+
+.dropbtn {
+    font-weight: 300;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: var(--main-color);
+    color: var(--accent-color);
+    border-radius: 10px;
+    border: 2px solid var(--main-color);
+    transition: ease 0.5s all 0s;
+    width: fit-content;
+    font-size: 10px;
+}
+  
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--main-color);
+    min-width: 160px;
+    z-index: 1;
+    transition: ease 0.5s all 0s;
+}
+
+.buttons-display .buttons-display-list .dropdown-content button {
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: var(--main-color);
+    color: var(--accent-color);
+    border-radius: 10px;
+    border: 2px solid var(--main-color);
+    transition: ease 0.5s all 0s;
+    width: fit-content;
+}
+
+.buttons-display .buttons-display-list .dropdown-content #yb:hover {
+    background-color: yellow;
+    color: black;
+    border: 2px solid black;
+}
+
+.buttons-display .buttons-display-list .dropdown-content #bw:hover {
+    background-color: white;
+    color: blue;
+    border: 2px solid blue;
+}
+
+.buttons-display .buttons-display-list .dropdown-content #pp:hover {
+    background-color: pink;
+    color: purple;
+    border: 2px solid purple;
+}   
+
+.dropdown-content button:hover {
+    border: 2px solid  var(--accent-color);
+}
+
+.show {
+    display:block;
+}

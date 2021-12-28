@@ -1,0 +1,37 @@
+{% extends "main/base.html" %}
+{% block content %}
+    <h1>Users</h1>
+        <div class='content-section'>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">User</th>
+                        <th scope="col">Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for user in users %}
+                    {% if user.username != 'admin' %}
+                    <tr>
+                        <td>{{user.username}}</td>
+                        {% for point in points %}
+                            {% if point.user == user.username %}
+                                <td>{{point.points}}</td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1158386488&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/etchris" title="etchris" target="_blank" style="color: #cccccc; text-decoration: none;">etchris</a> · <a href="https://soundcloud.com/etchris/read-this" title="readthis feat. alch_18" target="_blank" style="color: #cccccc; text-decoration: none;">readthis feat. alch_18</a></div>
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1133471818&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/etchris" title="etchris" target="_blank" style="color: #cccccc; text-decoration: none;">etchris</a> · <a href="https://soundcloud.com/etchris/unfold" title="unfold" target="_blank" style="color: #cccccc; text-decoration: none;">unfold</a></div>
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1097254246&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/etchris" title="etchris" target="_blank" style="color: #cccccc; text-decoration: none;">etchris</a> · <a href="https://soundcloud.com/etchris/stay" title="stay" target="_blank" style="color: #cccccc; text-decoration: none;">stay</a></div>
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1066167061&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/etchris" title="etchris" target="_blank" style="color: #cccccc; text-decoration: none;">etchris</a> · <a href="https://soundcloud.com/etchris/mqla" title="mqla  feat. Kavoi" target="_blank" style="color: #cccccc; text-decoration: none;">mqla  feat. Kavoi</a></div>
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1044345013&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/etchris" title="etchris" target="_blank" style="color: #cccccc; text-decoration: none;">etchris</a> · <a href="https://soundcloud.com/etchris/feeling" title="feeling  feat. alch_18" target="_blank" style="color: #cccccc; text-decoration: none;">feeling  feat. alch_18</a></div>
+        </div>
+
+{% endblock content %}

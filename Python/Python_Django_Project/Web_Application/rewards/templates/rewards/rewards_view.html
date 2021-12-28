@@ -1,0 +1,26 @@
+{% extends "main/base.html" %}
+{% block content %} 
+    <h1>Rewards</h1>
+        <div class='content-section'>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Points</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Vendor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for reward in rewards %}
+                    <tr>
+                        <td>{{reward.product}}</td>
+                        <td>{{reward.points}}</td>
+                        <td>{{reward.description}}</td>
+                        <td>{{reward.vendor}}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+{% endblock content %}

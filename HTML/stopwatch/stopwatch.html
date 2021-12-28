@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">      
+    <link rel="stylesheet" href="style.css">
+    <title>Stop Watch</title>
+</head>
+
+<body>
+    <div class="content">
+        <div class="timer-display">
+            <h1 class="timer" id="timer">00:00:00</h1>
+        </div>
+        <div class="buttons-display">
+            <ul class="buttons-display-list">
+                <li><div class="dropdown">
+                    <button onclick="showDropdown()" class="dropbtn">theme</button>
+                    <div id="myDropdown" class="dropdown-content">
+                      <button id="yb" onclick="yb()">yellow / black</button>
+                      <button id="bw" onclick="bw()">blue / white</button>
+                      <button id="pp" onclick="pp()">pink / purple</button>
+                    </div>
+                  </div>
+                </li>
+                <li><button onclick="startTime()">start</button></li>
+                <li><button onclick="stopTime()">stop</button></li>
+                <li><button onclick="reset()">reset</button></li>
+                <li><button class="mode" id="mode" onclick="changeMode()">light mode</button></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+<script src="script.js"></script>
+
+</html>
