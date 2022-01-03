@@ -1,6 +1,6 @@
 # LEET CODE 1010 Pairs of Songs
 # Given an array of songs, return the pairs who's
-# lengths summed are divisible by zero
+# lengths summed are divisible by 60
 
 def numPairsDivisibleBy60(time):
     res = 0
