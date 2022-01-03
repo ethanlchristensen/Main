@@ -18,10 +18,8 @@ class LRUCache():
         if self.entries < self.capacity:
             self.cache[key] = value
             self.entries += 1
-            return True
-        else:
-            print("CACHE FULL")
-            return False
+            return key in self.cache
+            
 
 my_cache = LRUCache(2)
 for i in range(5):
