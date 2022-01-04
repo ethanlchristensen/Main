@@ -1,24 +1,23 @@
-def mergeSorted(nums1, m, nums2, n):
-    last = m + n - 1
+def bitwiseComplement(n):
+	# converting the int to a string we can loop over. The [ 2 : ] turns a string like "0b1010" to "1010"
+	binaryString = str(bin(n))[2:]
+	
+	# converting the binary string to a list we can change
+	binaryString = [ char for char in binaryString ]
+	
+	# flipping the bits of the binary string
+	for i in range(len(binaryString)):
+		if binaryString[i] == '1':
+			binaryString[i] = '0'
+		else:
+			binaryString[i] = '1'
+	
+	# converting the list back into a string
+	binaryString = ''.join(binaryString)
+	
+	# converting the string back into an int, since the string is binary, we need to specify base-2
+	result = int(binaryString, 2)
+	
+	return result
 
-    while m > 0 and n > 0:
-        if nums1[m - 1] > nums2[n - 1]:
-            nums1[last] = nums1[m - 1]
-            m -= 1
-        else:
-            nums1[last] = nums2[n - 1]
-            n-= 1
-        last -= 1
-
-    while n > 0:
-        nums1[last] = nums2[n - 1]
-        n -= 1
-        m -= 1
-
-
-n1 = [1,2,5,6,10,0,0,0]
-n1l = 5
-n2 = [2,5,8]
-n2l = 3
-mergeSorted(n1, n1l, n2, n2l)
-print(n1)
+print(bitwiseComplement(10))
