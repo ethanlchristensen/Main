@@ -8,7 +8,7 @@ def printGrid(inGrid, name):
 
 
 def orangesRotting(grid):
-    print("CARSON IS COOL")
+    print("CARSON IS NOT COOL")
 
         
 
