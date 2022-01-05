@@ -8,9 +8,24 @@
 # is rotten. Return the number of minutes passed in order for all oranges
 # to become rotten, or -1 if it is not possible.
 def printGrid(l):
+    if len(l[0]) % 2 == 0:
+        print("="*(len(l[0]) * 2 +4))
+    else:
+        print("="*(len(l[0]) * 2 + 5))
     for r in l:
-        print(r)
-    print()
+        print("  ", end="")
+        for c in r:
+            if c == 2:
+                print('R', end="  ")
+            elif c == 1:
+                print('F', end="  ")
+            else:
+                print('#', end="  ")
+        print()
+    if len(l[0]) % 2 == 0:
+        print("="*(len(l[0]) * 2 + 4))
+    else:
+        print("="*(len(l[0]) * 2 + 5))
 
 def orangesRotting(grid):
     MINUTES = 0
@@ -137,7 +152,9 @@ def orangesRotting(grid):
         return -1
     if M >= 2 and N >= 2:
         o, n = helperMain(grid)
+        printGrid(o)
         while o != n:
+            printGrid(n)
             MINUTES += 1
             o, n = helperMain(n)
         for r in n:
