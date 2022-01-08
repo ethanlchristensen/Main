@@ -17,6 +17,8 @@ def isSameTree(p, q): # solution one
         return res
     tree1 = process(p)
     tree2 = process(q)
+    print(tree1)
+    print(tree2)
     return tree1 == tree2
 
 def isSameTreeV2(p, q): # updated solution
@@ -33,10 +35,6 @@ def isSameTreeV2(p, q): # updated solution
             return False
     res = helper(p, q)
     return res
-    
-        
-    
-
 
 
 t1 = BinaryNode(1, BinaryNode(2), BinaryNode(3))
