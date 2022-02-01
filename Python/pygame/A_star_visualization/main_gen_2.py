@@ -5,8 +5,8 @@ import time
 import mazegen
 from pygame.constants import GL_ACCELERATED_VISUAL
 
-pixel_size = 10
-ROWS = 50
+pixel_size = 2
+ROWS = 500
 my_maze = mazegen.maze(ROWS)
 WIDTH = ROWS * pixel_size
 WIN = pygame.display.set_mode((ROWS * pixel_size, ROWS * pixel_size))

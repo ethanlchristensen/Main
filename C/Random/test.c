@@ -1,12 +1,9 @@
-#include <stdio.h> 
-#include <sys/types.h> 
-#include <unistd.h> 
-#include <stdlib.h>
-int main() 
-{ 
-    fork(); 
-    fork(); 
-    fork(); 
-    printf("Hello world!\n");
-    return 0; 
-} 
+#include<stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+#include<string.h>
+
+int main( void ) {
+    printf("Hello World!\n");
+    return 0;
+}
